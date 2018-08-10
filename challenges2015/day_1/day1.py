@@ -2,6 +2,18 @@
 # Started August 2018
 # Coded in Python
 
-inputFile = open("input.txt", "r")
+floor = 0
 
-print inputFile.read()
+with open("input.txt", "r") as data:
+    while True:
+        move = data.read(1)
+        if move == '(':
+            floor += 1
+        elif move == ')':
+            floor -= 1
+
+        if not move:
+            print "End of File"
+            break
+
+    print "You would be located on floor", floor
